@@ -26,7 +26,13 @@ while (j < 1) {
   }
 }
 
-let message = confirm("Включати парні числа у додаванні?");
+while (userNumberM < userNumberN) {
+  if (userNumberM < userNumberN) {
+    alert("Число N більше за число M");
+  }
+}
+
+let message = confirm("Включати парні числа у додаванні? OK-Так; Скасувати-Ні");
 
 for (let counter = userNumberN; counter <= userNumberM; counter++) {
   if (message && counter % 2 === 0) continue;
