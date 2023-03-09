@@ -1,46 +1,33 @@
+let numberUserN;
+let numberUserM;
 let sum = 0;
-let i = 0;
-let j = 0;
 
-let userNumberN = +prompt("Введіть перше число N");
+while (!Number.isInteger(numberUserN) || numberUserN < 0) {
+  numberUserN = +prompt("Введіть число  N");
+}
 
-while (i < 1) {
-  if (Number.isInteger(userNumberN) && !Number.isNaN(userNumberN)) {
-    +userNumberN;
-    i++;
+while (!Number.isInteger(numberUserM) || numberUserN >= numberUserM) {
+  numberUserM = +prompt("Введіть число  M (більше ніж число N");
+}
+
+const message = confirm("Включати парні? (OK - ТАК; Cкасувати - НІ)");
+
+for (let counter = numberUserN; counter <= numberUserM; counter++) {
+  if (message === true) {
+    sum += counter;
   } else {
-    alert("Введені дані не є числом (N).");
+    if (counter % 2 === 0) continue;
+    sum += counter;
   }
 }
+const result =
+  "Число (N) користувача  = " +
+  numberUserN +
+  "<br />Число (M) користувача = " +
+  numberUserM +
+  "<br />Чи були включенні парні числа = " +
+  message +
+  "<br />Результат = " +
+  sum;
 
-let userNumberM = +prompt(
-  "Введіть друге число M, щоб було більше за попереднє число N"
-);
-
-while (j < 1) {
-  if (Number.isInteger(userNumberM) && !Number.isNaN(userNumberM)) {
-    +userNumberM;
-    j++;
-  } else {
-    alert("Введені дані не є числом (M).");
-  }
-}
-
-while (userNumberM < userNumberN) {
-  if (userNumberM < userNumberN) {
-    alert("Число N більше за число M");
-  }
-}
-
-let message = confirm("Включати парні числа у додаванні? OK-Так; Скасувати-Ні");
-
-for (let counter = userNumberN; counter <= userNumberM; counter++) {
-  if (message && counter % 2 === 0) continue;
-  sum += counter;
-}
-
-if (message == true) {
-  alert("Сума всіх чисел дорівнює: " + sum);
-} else {
-  alert("Сума всіх непарних чисел дорівнює: " + sum);
-}
+document.writeln(result);
