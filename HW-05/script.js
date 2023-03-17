@@ -107,8 +107,7 @@ console.log(
   "Слово: " +
     dividedWord +
     ", яке розділено у масив по складам з 3-х букв: " +
-    divideByThree(dividedWord).join("; ") +
-    "\n\n"
+    divideByThree(dividedWord).join("; ")
 );
 
 //  Завдання №10
