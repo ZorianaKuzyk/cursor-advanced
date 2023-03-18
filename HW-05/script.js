@@ -26,8 +26,8 @@ console.log("Мода: " + duplicateCount);
 
 // Завдання №3
 function getAverage(number) {
-  var sum = 0;
-  for (var i = 0; i < number.length; i++) {
+  let sum = 0;
+  for (let i = 0; i < number.length; i++) {
     sum = sum + number[i];
   }
   return sum / number.length;
