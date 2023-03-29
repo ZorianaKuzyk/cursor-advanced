@@ -68,7 +68,9 @@ class BudgetStudent extends Student {
     } else if (this.getAverageMark() < 4 && this.studying === true) {
       console.log("Ваш середній бал занизький для отримання стипендії");
     } else if (this.studying === false) {
-      console.log(`Студента ${this.fullName} виключено з навчального закладу`);
+      console.log(
+        `Cтудента ${this.fullName} було виключено з навчального закладу`
+      );
     }
   }
 }
