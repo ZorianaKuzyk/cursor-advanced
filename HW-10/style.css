@@ -24,7 +24,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.key {
+.btn {
   border: 0.2rem solid rgb(249, 251, 247);
   border-radius: 0.5rem;
   margin: 1rem;
@@ -37,7 +37,7 @@ body {
   text-shadow: 0 0 0.9rem rgb(205, 198, 198);
   cursor: pointer;
 }
-:active.key {
+:active.btn {
   border: 0.3rem solid rgb(231, 198, 7);
   transform: scale(1.1);
 }

@@ -1,17 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sounds = {
-    A: new Audio("./sounds/clap.wav"),
-    S: new Audio("./sounds/hihat.wav"),
-    D: new Audio("./sounds/kick.wav"),
-    F: new Audio("./sounds/openhat.wav"),
-    G: new Audio("./sounds/boom.wav"),
-    H: new Audio("./sounds/ride.wav"),
-    J: new Audio("./sounds/snare.wav"),
-    K: new Audio("./sounds/tom.wav"),
-    L: new Audio("./sounds/tink.wav"),
-  };
-  document.addEventListener("click", function (value) {
-    const key = value.target.textContent;
-    sounds[key].play();
+  window.addEventListener("keydown", (e) => {
+    const keys = document.querySelectorAll(".btn");
+    keys.forEach((el) => {
+      el.classList.remove("play");
+    });
+
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if (!key) return;
+
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    if (!audio) return;
+
+    audio.currentTime = 0;
+    audio.play();
+
+    key.classList.add("play");
   });
 });
