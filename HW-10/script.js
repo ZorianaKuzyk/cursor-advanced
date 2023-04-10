@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     K: new Audio("./sounds/tom.wav"),
     L: new Audio("./sounds/tink.wav"),
   };
-
   document.addEventListener("click", function (value) {
     const key = value.target.textContent;
     sounds[key].play();
