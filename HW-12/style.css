@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 5vh;
+  background: url(./img/front_image.png) no-repeat center/cover;
+  background-attachment: fixed;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main_title {
+  font-size: 40px;
+  color: black;
+  text-shadow: 0 0 5px rgb(244, 59, 12);
+}
+nav {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+#myInput {
+  background-color: white;
+  font-size: 11px;
+  width: 150px;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.btn {
+  width: 120px;
+  height: 35px;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 4px rgb(244, 59, 12);
+  transition: all 0.5s ease-in;
+}
+.btn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+main {
+  width: 90%;
+  height: 100%;
+  margin: 40px auto;
+}
+.cards {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(248, 248, 248);
+  color: black;
+  font-size: 20px;
+  max-width: 200px;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  position: relative;
+}
+.card_film:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.card_image {
+  max-height: 270px;
+}
+
+.card_image img {
+  width: 100%;
+  height: 100%;
+}
+
+.card_text {
+  padding: 10px;
+}
+.card_wrap {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
