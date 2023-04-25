@@ -1,4 +1,8 @@
-#elements {
-  display: flex;
-  justify-content: center;
+div {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  margin: 0 auto;
+  background-color: bisque;
+  width: fit-content;
 }

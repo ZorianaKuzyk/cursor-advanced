@@ -1,35 +1,33 @@
 function generateBlocks() {
-  for (i = 0; i < 5; i++) {
-    let blocks = document.getElementById("elements");
-    let div = document.createElement("div");
-    blocks.append(div);
+  const wrapper = document.createElement("div");
+  wrapper.className = "all_blocks";
+  document.body.appendChild(wrapper);
 
-    for (j = 0; j < 5; j++) {
-      let redColor = Math.floor(Math.random() * 256);
-      let greenColor = Math.floor(Math.random() * 256);
-      let blueColor = Math.floor(Math.random() * 256);
-      let item = document.createElement("div");
-      item.setAttribute("id", "value" + i + j);
-      item.style.width = "50px";
-      item.style.height = "50px";
-      item.style.backgroundColor = `rgb(${redColor}, ${greenColor}, ${blueColor})`;
-      div.append(item);
-    }
+  for (let i = 0; i < 25; i++) {
+    const block = document.createElement("div");
+    block.className = "block";
+    block.style.width = "50px";
+    block.style.height = "50px";
+    block.style.backgroundColor = getRandomColor();
+    wrapper.appendChild(block);
   }
+}
+
+function getRandomColor() {
+  let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  return randomColor;
+}
+
+function changeColor() {
+  const blocks = document.querySelectorAll(".block");
+  blocks.forEach((block) => {
+    block.style.backgroundColor = getRandomColor();
+  });
 }
 
 function generateBlocksInterval() {
-  for (i = 0; i < 5; i++) {
-    for (j = 0; j < 5; j++) {
-      let redColor = Math.floor(Math.random() * 256);
-      let greenColor = Math.floor(Math.random() * 256);
-      let blueColor = Math.floor(Math.random() * 256);
-      let block = document.getElementById("value" + i + j);
-      block.style.backgroundColor = `rgb(${redColor}, ${greenColor}, ${blueColor})`;
-    }
-  }
+  generateBlocks();
+  setInterval(changeColor, 1000);
 }
 
-generateBlocks();
-setInterval(generateBlocksInterval, 1000);
 generateBlocksInterval();
